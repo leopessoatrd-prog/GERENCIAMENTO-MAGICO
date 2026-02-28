@@ -1,0 +1,151 @@
+:root {
+  color-scheme: dark;
+  --bg: #070b16;
+  --card: #11172a;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --primary: #38bdf8;
+  --win: #22c55e;
+  --loss: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #1f2a44, var(--bg) 45%);
+  color: var(--text);
+}
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+h1 {
+  margin-bottom: 0.4rem;
+  text-align: center;
+  letter-spacing: 0.08em;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 1.8rem;
+}
+
+.card {
+  background: color-mix(in oklab, var(--card), #000 5%);
+  border: 1px solid #223154;
+  border-radius: 16px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.9rem;
+  align-items: end;
+}
+
+label {
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+input {
+  border: 1px solid #2c3f67;
+  border-radius: 10px;
+  background: #080d1a;
+  color: var(--text);
+  padding: 0.7rem 0.8rem;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #001a2a;
+}
+
+.btn-secondary {
+  background: #334155;
+  color: #f1f5f9;
+  margin-top: 0.8rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.stat {
+  background: #0a1122;
+  border: 1px solid #1f2c4a;
+  border-radius: 12px;
+  padding: 0.7rem;
+}
+
+.stat small {
+  color: var(--muted);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.next-entry {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0.8rem 0 0.2rem;
+}
+
+.message {
+  color: #facc15;
+  min-height: 1.5rem;
+}
+
+.actions {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.action-btn {
+  border: none;
+  border-radius: 16px;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-weight: 900;
+  min-height: 96px;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+}
+
+.action-btn.win {
+  background: linear-gradient(145deg, #22c55e, #15803d);
+  color: #ecfdf5;
+}
+
+.action-btn.loss {
+  background: linear-gradient(145deg, #ef4444, #b91c1c);
+  color: #fef2f2;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
