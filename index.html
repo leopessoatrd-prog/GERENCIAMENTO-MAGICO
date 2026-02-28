@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GERENCIAMENTO MAGICO</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>GERENCIAMENTO MAGICO</h1>
+      <p class="subtitle">Modelo inspirado na planilha de gerenciamento Masaniello.</p>
+    </header>
+
+    <section class="card config-card">
+      <h2>Configurações iniciais</h2>
+      <form id="configForm" class="grid">
+        <label>
+          Banca inicial
+          <input id="bankrollInput" type="number" min="1" step="0.01" value="100" required />
+        </label>
+
+        <label>
+          Número de operações
+          <input id="operationsInput" type="number" min="1" step="1" value="7" required />
+        </label>
+
+        <label>
+          Meta de win
+          <input id="targetWinsInput" type="number" min="1" step="1" value="2" required />
+        </label>
+
+        <label>
+          Odd média
+          <input id="oddsInput" type="number" min="1.1" step="0.01" value="2" required />
+        </label>
+
+        <button class="btn btn-primary" type="submit">Iniciar ciclo</button>
+      </form>
+    </section>
+
+    <section class="card status-card" id="statusCard" hidden>
+      <h2>Status do ciclo</h2>
+      <div class="stats" id="stats"></div>
+      <p class="next-entry" id="nextEntry"></p>
+      <p class="message" id="message"></p>
+
+      <div class="actions">
+        <button id="winBtn" class="action-btn win">WIN</button>
+        <button id="lossBtn" class="action-btn loss">LOSS</button>
+      </div>
+
+      <button id="resetBtn" class="btn btn-secondary">Reiniciar ciclo</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
